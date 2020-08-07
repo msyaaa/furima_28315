@@ -41,7 +41,6 @@ Things you may want to cover:
 ### Association
 - has_many :items
 - has_many :purchases
-- has_one :address
 
 ## items テーブル
 |     Column     |  Type  |   Options   |
@@ -55,11 +54,9 @@ Things you may want to cover:
 |  shipping_cost | integer | null: false |
 |  shipping_days | integer | null: false |
 |    user     | references | null: false, foreign_key: true |
-|  purchase   | references | null: false, foreign_key: true |
-|  address    | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :address
+- has_one :address
 - has_one :purchase
 - belongs_to :user
 - belongs_to_active_hash :category
@@ -86,9 +83,8 @@ Things you may want to cover:
 |   house_number   | string | null: false |
 |   building_name  | string | 
 | telephone_number | string | null: false |
-|     user      | references | null: false, foreign_key: true |
+|     item      | references | null: false, foreign_key: true |
 
 ### Association
-- has_many :items
-- belongs_to :user
+- belongs_to :item
 - belongs_to_active_hash :prefecture
