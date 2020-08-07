@@ -48,19 +48,19 @@ Things you may want to cover:
 | -------------- | ------ | ----------- |
 |      name      | string | null: false |
 |      image     | string | null: false |
-|    category    | string | null: false |
-|     status     | string | null: false |
+|    category    | integer | null: false |
+|     status     | integer | null: false |
 |      price     | integer | null: false |
 |   description  | text | null: false |
-|  shipping_cost | string | null: false |
-|  shipping_days | string | null: false |
-|    user_id     | references | null: false, foreign_key: true |
-|  purchase_id   | references | null: false, foreign_key: true |
-|  address_id    | references | null: false, foreign_key: true |
+|  shipping_cost | integer | null: false |
+|  shipping_days | integer | null: false |
+|    user     | references | null: false, foreign_key: true |
+|  purchase   | references | null: false, foreign_key: true |
+|  address    | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :address
-- belongs_to :purchase
+- has_one :purchase
 - belongs_to :user
 - belongs_to_active_hash :category
 - belongs_to_active_hash :status
@@ -70,14 +70,12 @@ Things you may want to cover:
 ## purchases テーブル
 |   Column   |    Type    |   Options   |
 | ---------- | ---------- | ----------- |
-|   price    |  integer   | null: false |
-|   user_id  | references | null: false, foreign_key: true |
-| address_id | references | null: false, foreign_key: true |
+|   user  | references | null: false, foreign_key: true |
+|   item  | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
-- has_many :items
-- belongs_to :address
+- belongs_to :item
 
 ## addresses テーブル
 |      Column      |  Type  |   Options   |
@@ -88,10 +86,9 @@ Things you may want to cover:
 |   house_number   | string | null: false |
 |   building_name  | string | 
 | telephone_number | string | null: false |
-|     user_id      | references | null: false, foreign_key: true |
+|     user      | references | null: false, foreign_key: true |
 
 ### Association
-- has_many :purchases
 - has_many :items
 - belongs_to :user
 - belongs_to_active_hash :prefecture
