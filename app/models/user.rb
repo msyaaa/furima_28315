@@ -14,5 +14,5 @@ class User < ApplicationRecord
     validates :last_name_reading, format: { with: /\A[ァ-ヶー－]+\z/ }
     validates :first_name_reading, format: { with: /\A[ァ-ヶー－]+\z/ }
     validates :birthday
-  end      
+  end
 end
