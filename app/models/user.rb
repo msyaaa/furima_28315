@@ -19,4 +19,7 @@ class User < ApplicationRecord
     validates :first_name_reading, format: { with: name_reading_validation }
     validates :birthday
   end
+
+  has_many :items
+  has_many :purchases
 end

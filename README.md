@@ -50,6 +50,7 @@ Things you may want to cover:
 |    category_id    | integer | null: false |
 |     status_id     | integer | null: false |
 |      price     | integer | null: false |
+|      prefecture_id     | integer | null: false |
 |   description  | text | null: false |
 |  shipping_cost_id | integer | null: false |
 |  shipping_day_id | integer | null: false |
@@ -61,6 +62,7 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to_active_hash :category
 - belongs_to_active_hash :status
+- belongs_to_active_hash :prefecture
 - belongs_to_active_hash :shipping_day
 - belongs_to_active_hash :shipping_cost
 
