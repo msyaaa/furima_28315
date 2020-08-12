@@ -47,12 +47,12 @@ Things you may want to cover:
 | -------------- | ------ | ----------- |
 |      name      | string | null: false |
 |      image     | string | null: false |
-|    category    | integer | null: false |
-|     status     | integer | null: false |
+|    category_id    | integer | null: false |
+|     status_id     | integer | null: false |
 |      price     | integer | null: false |
 |   description  | text | null: false |
-|  shipping_cost | integer | null: false |
-|  shipping_days | integer | null: false |
+|  shipping_cost_id | integer | null: false |
+|  shipping_day_id | integer | null: false |
 |    user     | references | null: false, foreign_key: true |
 
 ### Association
@@ -61,7 +61,7 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to_active_hash :category
 - belongs_to_active_hash :status
-- belongs_to_active_hash :shipping_days
+- belongs_to_active_hash :shipping_day
 - belongs_to_active_hash :shipping_cost
 
 ## purchases テーブル
