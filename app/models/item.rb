@@ -16,6 +16,7 @@ class Item < ApplicationRecord
     validates :price, format: { with: price_validation }
     validates :price, numericality: { only_integer: true, greater_than: 299, less_than: 10000000 }
     validates :description, length: { maximum: 1000 }
+    validates :image
   end
 
   with_options numericality: { other_than: 1 } do
