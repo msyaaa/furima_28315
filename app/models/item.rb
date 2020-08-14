@@ -14,7 +14,7 @@ class Item < ApplicationRecord
     validates :name, length: { maximum: 40 }
     price_validation = /\A[0-9]+\z/
     validates :price, format: { with: price_validation }
-    validates :price, numericality: { only_integer: true, greater_than: 299, less_than: 10000000 }
+    validates :price, numericality: { only_integer: true, greater_than: 299, less_than: 10_000_000 }
     validates :description, length: { maximum: 1000 }
     validates :image
   end
