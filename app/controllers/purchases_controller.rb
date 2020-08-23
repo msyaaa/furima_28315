@@ -1,7 +1,7 @@
 class PurchasesController < ApplicationController
   before_action :move_to_sign_in, only: [:index]
   before_action :move_to_index, only: [:index]
-  before_action :set_item, only: [:index, :create, :pay_item]
+  before_action :set_item, only: [:index, :create]
   def index
     @item_purchase = ItemPurchase.new
   end
@@ -25,6 +25,7 @@ class PurchasesController < ApplicationController
 
   def pay_item
     Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+    item = Item.find(params[:item_id])
     Payjp::Charge.create(
       amount: item.price,
       card: purchase_params[:token],
