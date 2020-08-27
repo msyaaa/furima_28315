@@ -1,0 +1,10 @@
+ ja:
+  activemodel:
+    attributes:
+      item_purchase:
+        postal_code: 郵便番号
+        city: 市区町村
+        house_number: 番地
+        prefecture_id: 都道府県
+        telephone_number: 電話番号
+        token: カード情報
