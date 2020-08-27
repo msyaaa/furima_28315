@@ -16,10 +16,10 @@ class Item < ApplicationRecord
     validates :price, format: { with: price_validation }
     validates :price, numericality: { only_integer: true, greater_than: 299, less_than: 10_000_000 }
     validates :description, length: { maximum: 1000 }
-    validates :image
+    validates :image, presence: { message: "を選択してください" }
   end
 
-  with_options numericality: { other_than: 1 } do
+  with_options numericality: { other_than: 1, message: "を選択してください" } do
     validates :category_id
     validates :status_id
     validates :prefecture_id
