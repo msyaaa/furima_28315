@@ -1,0 +1,36 @@
+<%= render "shared/second-header"%>
+
+<div class='registration-main'>
+  <div class='form-wrap'>
+    <div class='form-header'>
+      <h1 class='form-header-text'>
+        会員情報入力
+      </h1>
+    </div>
+    <div class='login-flash-message'>
+      <%= flash[:notice] %>
+      <%= flash[:alert] %>
+    </div>
+    <div class="form-group icon">
+      <i class="far fa-envelope", id="mail-icon"></i>
+      <%= link_to "メールアドレスで登録", new_user_registration_path, class:"input-default email-form" %>
+    </div>
+    <div class="form-group icon">
+      <%= image_tag 'google.jpg' , size: '20x20' ,id: "google-icon" %>
+      <%= link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, class:"input-default password-form", method: :post%>
+    </div>
+    <div class='form-group icon'>
+      <i class="fab fa-facebook-square", id="facebook-icon"></i>
+      <%= link_to 'Facebookで登録', user_facebook_omniauth_authorize_path, class:"input-default facebook-form", method: :post%>
+    </div>
+    <div class="form-group">
+    <h2 class='form-bottom-text', id="form-bottom">
+      「会員登録」のボタンを押すことにより、
+      <span>利用規約</span>
+      <br>に同意したものとみなします
+    </h2>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/second-footer"%>
