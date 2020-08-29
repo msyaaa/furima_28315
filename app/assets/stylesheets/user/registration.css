@@ -153,3 +153,68 @@
   text-align: right;
   cursor: pointer;
 }
+
+.email-form {
+  font-size: 14px;
+  color: #fff;
+  background-color: #ea352d;
+  text-align: center;
+  line-height: 28px;
+}
+.password-form {
+  font-size: 14px;
+  color: #000;
+  text-align: center;
+  line-height: 28px;
+}
+.facebook-form {
+  font-size: 14px;
+  color: #fff;
+  background-color: #385185;
+  text-align: center;
+  line-height: 28px;
+}
+.registration-form {
+  font-size: 14px;
+  color: #fff;
+  background-color: #0099e8;
+  text-align: center;
+  line-height: 28px;
+  margin-bottom: 50px;
+}
+.icon {
+  position: relative;
+}
+
+i {
+  font-size: 20px;
+  color: #fff;
+} 
+#mail-icon {
+  position: absolute;
+  top: 40px;
+  left: 15px;
+}
+
+#google-icon {
+  position: absolute;
+  top: 40px;
+  left: 15px;
+}
+
+#facebook-icon {
+  position: absolute;
+  top: 40px;
+  left: 15px;
+}
+
+#form-bottom {
+  padding-top: 30px;
+  padding-bottom: 0;
+}
+.account {
+  text-align: center;
+}
+.login-message {
+  padding-top: 30px;
+}
