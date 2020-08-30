@@ -41,6 +41,7 @@ Things you may want to cover:
 ### Association
 - has_many :items
 - has_many :purchases
+- has_many :sns_credentials
 
 ## items テーブル
 |     Column     |  Type  |   Options   |
@@ -89,3 +90,13 @@ Things you may want to cover:
 ### Association
 - belongs_to :item
 - belongs_to_active_hash :prefecture
+
+## sns_credentials テーブル
+|    Column   |  Type  |   Options   |
+| ----------- | ------ | ----------- |
+|   provider  | string | 
+|     uid     | string | 
+|    user     | references | foreign_key: true | 
+
+### Association
+- belongs_to :user
