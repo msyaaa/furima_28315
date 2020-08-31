@@ -181,6 +181,8 @@
 
 .comment-flag-icon {
   margin: 10px 5px 0 0;
+  position: absolute;
+  left: 200px;
 }
 
 .links {
@@ -203,4 +205,55 @@
   text-decoration: none;
   font-weight: bold;
   font-size: 23px;
+}
+
+#comment-btn {
+  position: relative;
+}
+
+#comment-set {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+#comment-set > p {
+  width: 90%;
+  text-align: start;
+}
+
+#comments-frame {
+  width: 90%;
+  padding: 10px;
+  border: solid 1px #eef0f4;
+  border-radius: 10px;
+  background-color: #eef0f4;
+  resize: none;
+  display: flex;
+  flex-direction: column;
+}
+
+#comments-comment {
+  width: 100%;
+  text-align: start;
+  word-wrap: break-word;
+}
+
+#comment-form {
+  padding: 20px 0;
+}
+
+#comment-time {
+  color: #aaa;
+  font-size: 14px;
+  text-align: start;
+  margin-top: 10px;
+}
+
+#clock {
+  font-size: 16px;
+  color: #aaa;
+  margin-right: 5px;
 }
