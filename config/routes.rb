@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root "items#index"
   resources :items do
     resources :purchases, only: [:index, :create]
+    resources :comments, only: :create
   end
   resources :users, only: :new
 end
