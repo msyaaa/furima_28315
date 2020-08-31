@@ -36,7 +36,7 @@ class User < ApplicationRecord
     # userが登録済みの場合はそのままログインの処理へ行くので、ここでsnsのuser_idを更新しておく
     if user.persisted?
       sns.user = user
-      sns.save(:validate => false)
+      sns.save
     end
     { user: user, sns: sns }
   end
