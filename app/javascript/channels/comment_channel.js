@@ -10,13 +10,18 @@ consumer.subscriptions.create("CommentChannel", {
   },
 
   received(data) {
+    var moment = require('moment-timezone');
+    let date = moment(data.date);
+    date.locale('ja');
+    date.tz('Asia/Tokyo');
+    const day = date.fromNow();
     const html = `
       <div id="comment-set">
         <p>${data.user}</p>
         <div id="comments-frame">
           <p id="comments-comment">${data.content.text}</p>
           <p id="comment-time">
-            <i class="far fa-clock", id="clock"></i>${data.date}
+            <i class="far fa-clock", id="clock"></i>${day}
           </p>
         </div>
       </div>`;

@@ -91,7 +91,7 @@
           <div id="comments-frame">
             <p id="comments-comment"><%= comment.text %></p>
               <p id="comment-time">
-                <i class="far fa-clock", id="clock"></i><%= l comment.created_at %>
+                <i class="far fa-clock", id="clock"></i><%= time_ago_in_words(comment.created_at) %>前
               </p>
           </div>
         </div>
