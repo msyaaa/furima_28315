@@ -60,7 +60,7 @@ Things you may want to cover:
 ### Association
 - has_one :address
 - has_one :purchase
-- has_many :comments
+- has_many :comments, dependent: :destroy
 - belongs_to :user
 - belongs_to_active_hash :category
 - belongs_to_active_hash :status
@@ -101,7 +101,7 @@ Things you may want to cover:
 |    user     | references | foreign_key: true | 
 
 ### Association
-- belongs_to :user
+- belongs_to :user, optional: true
 
 ## comments テーブル
 | Column|  Type  |   Options   |
