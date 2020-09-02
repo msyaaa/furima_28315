@@ -7,8 +7,7 @@ ja:
        first_name: お名前（名）
        last_name_reading: お名前（姓カナ）
        first_name_reading: お名前（名カナ）
-       birthday: 生年月日
-ja:
-  time:
-    formats:
+       birthday: 生年月日 
+ time:
+   formats:
       default: "%Y/%m/%d %H:%M:%S"
