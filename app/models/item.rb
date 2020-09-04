@@ -17,14 +17,22 @@ class Item < ApplicationRecord
     validates :price, format: { with: price_validation }
     validates :price, numericality: { only_integer: true, greater_than: 299, less_than: 10_000_000 }
     validates :description, length: { maximum: 1000 }
-    validates :image, presence: { message: "を選択してください" }
+    validates :image, presence: { message: 'を選択してください' }
   end
 
-  with_options numericality: { other_than: 1, message: "を選択してください" } do
+  with_options numericality: { other_than: 1, message: 'を選択してください' } do
     validates :category_id
     validates :status_id
     validates :prefecture_id
     validates :shipping_cost_id
     validates :shipping_day_id
+  end
+
+  def self.search(search)
+    if search != ''
+      Item.where('name LIKE(?)', "%#{search}%").order(created_at: 'DESC')
+    else
+      Item.order(created_at: 'DESC')
+    end
   end
 end

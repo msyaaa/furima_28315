@@ -43,6 +43,11 @@
 
 .search-icon {
   width: 100%;
+  cursor: pointer;
+}
+
+.btn-hidden {
+  display: none;
 }
 
 .nav {

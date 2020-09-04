@@ -1,0 +1,17 @@
+#search-result {
+  font-size: 25px;
+  color: black;
+}
+
+#search {
+  font-size: 22px;
+  color: black;
+  font-weight: normal;
+}
+
+#key-word {
+  font-weight: bold;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+
