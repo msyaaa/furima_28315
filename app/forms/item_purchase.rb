@@ -11,7 +11,7 @@ class ItemPurchase
     validates :telephone_number, format: { with: telephone_number_validation }
     validates :token
   end
-  validates :prefecture_id, numericality: { other_than: 1, message: "を選択してください" }
+  validates :prefecture_id, numericality: { other_than: 1, message: 'を選択してください' }
 
   def save
     Address.create(postal_code: postal_code, prefecture_id: prefecture_id, city: city, house_number: house_number, building_name: building_name, telephone_number: telephone_number, item_id: item_id)

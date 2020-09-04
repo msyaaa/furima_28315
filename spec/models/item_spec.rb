@@ -22,7 +22,7 @@ RSpec.describe Item, type: :model do
         it 'nameが空のでは保存できない' do
           @item.name = nil
           @item.valid?
-          expect(@item.errors.full_messages).to include("商品名を入力してください")
+          expect(@item.errors.full_messages).to include('商品名を入力してください')
         end
         it '商品名が40文字以上の時は登録できない' do
           @item.name = Faker::Lorem.characters(40)
@@ -32,12 +32,12 @@ RSpec.describe Item, type: :model do
         it 'imageが空では保存できない' do
           @item.image = nil
           @item.valid?
-          expect(@item.errors.full_messages).to include("画像を選択してください")
+          expect(@item.errors.full_messages).to include('画像を選択してください')
         end
         it 'priceが空では保存できない' do
           @item.price = nil
           @item.valid?
-          expect(@item.errors.full_messages).to include("販売価格を入力してください")
+          expect(@item.errors.full_messages).to include('販売価格を入力してください')
         end
         it 'priceが300未満であれば保存できない' do
           @item.price = 111
@@ -52,7 +52,7 @@ RSpec.describe Item, type: :model do
         it 'descriptionが空では保存できない' do
           @item.description = nil
           @item.valid?
-          expect(@item.errors.full_messages).to include("商品の説明を入力してください")
+          expect(@item.errors.full_messages).to include('商品の説明を入力してください')
         end
         it '商品説明が1000文字以上の時は登録できない' do
           @item.description = Faker::Lorem.paragraphs(number: 500)

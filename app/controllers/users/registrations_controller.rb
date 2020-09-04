@@ -15,7 +15,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
   def create
     if params[:sns_auth] == 'true'
-      pass = Faker::Internet.password + "1a"
+      pass = Faker::Internet.password + '1a'
       params[:user][:password] = pass
       params[:user][:password_confirmation] = pass
     end

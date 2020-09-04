@@ -29,12 +29,12 @@ RSpec.describe ItemPurchase, type: :model do
         it 'tokenが空では保存できない' do
           @item_purchase.token = nil
           @item_purchase.valid?
-          expect(@item_purchase.errors.full_messages).to include("カード情報を入力してください")
+          expect(@item_purchase.errors.full_messages).to include('カード情報を入力してください')
         end
         it 'postal_codeが空では保存できない' do
           @item_purchase.postal_code = nil
           @item_purchase.valid?
-          expect(@item_purchase.errors.full_messages).to include("郵便番号を入力してください")
+          expect(@item_purchase.errors.full_messages).to include('郵便番号を入力してください')
         end
         it 'postal_codeはハイフンがないと保存できない' do
           @item_purchase.postal_code = '1234567'
@@ -64,17 +64,17 @@ RSpec.describe ItemPurchase, type: :model do
         it 'cityが空では保存できない' do
           @item_purchase.city = nil
           @item_purchase.valid?
-          expect(@item_purchase.errors.full_messages).to include("市区町村を入力してください")
+          expect(@item_purchase.errors.full_messages).to include('市区町村を入力してください')
         end
         it 'house_numberが空では保存できない' do
           @item_purchase.house_number = nil
           @item_purchase.valid?
-          expect(@item_purchase.errors.full_messages).to include("番地を入力してください")
+          expect(@item_purchase.errors.full_messages).to include('番地を入力してください')
         end
         it 'telephone_numberが空では保存できない' do
           @item_purchase.telephone_number = nil
           @item_purchase.valid?
-          expect(@item_purchase.errors.full_messages).to include("電話番号を入力してください")
+          expect(@item_purchase.errors.full_messages).to include('電話番号を入力してください')
         end
         it 'telephone_numberはハイフンがあると保存できない' do
           @item_purchase.telephone_number = '090-1234-5678'
