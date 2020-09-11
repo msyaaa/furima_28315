@@ -15,7 +15,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
   def create
     if params[:sns_auth] == 'true'
-      pass = Devise.friendly_token + '1a'
+      pass = Devise.friendly_token.gsub(/[\-_]/, 'a') + '1a'
       params[:user][:password] = pass
       params[:user][:password_confirmation] = pass
     end
